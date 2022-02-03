@@ -1,0 +1,2 @@
+# woRdle
+Wordle in R!
