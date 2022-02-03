@@ -35,7 +35,6 @@ guess1 <- as.list(unlist(guess1))
 ## Check if guess is in goal. Convert to matrix.
 guess1_results <- as.list(unlist(lapply(guess1, 'grepl', x = goal_word)))
 guess1_results_matrix <- matrix(guess1_results, nrow = 5, ncol = 5)
-correct_guesses <- which(guess1_results_matrix == TRUE, arr.ind = TRUE) 
-correct_guesses <- matrix(correct_guesses) ## Rows are letters, cols are position
+correct_guesses <- which(guess1_results_matrix == TRUE, arr.ind = TRUE) ##row = matching letter in goal; col = letter in guess
 
 }
