@@ -25,8 +25,9 @@ while (is_acceptable != TRUE) {
     is_acceptable <- guess1 %in% acceptable$wordlist
     while (nchar(guess1) != 5) {
         guess1 <- readline(noquote('Please guess a 5 character word: '))
+        }
     }
-    }
+rm(is_acceptable)
 ## Split guess string.
 ## Unlist() is used to return a list of length = n letters
 guess1 <- strsplit(guess1, split = "")
