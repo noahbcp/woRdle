@@ -4,9 +4,9 @@ rm(list=ls())
 ## Dependencies
 library(crayon)
 ## Load english 5 letter words
-acceptable <- read.csv('fiveletterwords.csv')
+acceptable <- read.csv('fiveletterwords.csv', fileEncoding="UTF-8-BOM")
 ## Convert 'fiveletterwords.csv' into a list object
-wordlist <- read.csv('wordlist.csv')
+wordlist <- read.csv('wordlist.csv', fileEncoding="UTF-8-BOM")
 ## Sample wordlist to select goal word. Split goal word.
 ## Unlist() is used to return a list of length = n letters
 goal_word <- sample(wordlist$wordlist, 1)
@@ -14,6 +14,7 @@ goal_word <- strsplit(goal_word, split = "")
 goal_word <- as.list(unlist(goal_word))
 ## Prompt user to guess
 guess1 <- readline(prompt = 'First guess: ')
+guess1 <- tolower(guess1)
 ## Reject guesses longer than 5 characters
 while (nchar(guess1) != 5) {
     guess1 <- readline(noquote('Please guess a 5 character word: '))
