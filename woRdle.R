@@ -4,9 +4,9 @@ rm(list=ls())
 ## Dependencies
 library(crayon)
 ## Load english 5 letter words
-acceptable <- read.csv('fiveletterwords.csv')
+acceptable <- read.csv('fiveletterwords.csv', fileEncoding="UTF-8-BOM")
 ## Convert 'fiveletterwords.csv' into a list object
-wordlist <- read.csv('wordlist.csv')
+wordlist <- read.csv('wordlist.csv', fileEncoding="UTF-8-BOM")
 ## Sample wordlist to select goal word. Split goal word.
 ## Unlist() is used to return a list of length = n letters
 goal_word <- sample(wordlist$wordlist, 1)
