@@ -21,10 +21,7 @@ while (guess_count <= max_guess) {
     is_acceptable <- guess %in% acceptable$wordlist
     if (is_acceptable != TRUE) {
         guess_count <- guess_count - 1
-        guess <- readline(noquote(paste('That word is not acceptable ', '(guess ', guess_count, ' / ', max_guess, '): ', sep = "")))
-        guess <- tolower(guess)
-        is_acceptable <- guess %in% acceptable$wordlist
-        guess_count + 1
+        readline(noquote(paste('Sorry, that word is not acceptable. [Press enter]')))
     }
     if (actual == guess) {
         readline('You guessed right!')
@@ -34,8 +31,6 @@ while (guess_count <= max_guess) {
         stop()
     }
     remaining = ''
-    while (i = 0) {
-        if (i < length(actual)) {i + 1}
     }
     }
 }
