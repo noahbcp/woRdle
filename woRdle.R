@@ -25,7 +25,7 @@ while (guess_count == 1 & guess_count <= max_guess & guess_count + 1 ) {
     ## Reject guesses that are not real words
     is_acceptable <- guess %in% acceptable$wordlist
     if (is_acceptable != TRUE) {
-        guess <- readline(noquote(paste('That word is not in the dictionary. Please guess again', '(guess ', guess_count, ' / ', max_guess, '): ', sep = "")))
+        guess <- readline(noquote(paste('That word is not in the dictionary. Please guess again ', '(guess ', guess_count, ' / ', max_guess, '): ', sep = "")))
         is_acceptable <- guess %in% acceptable$wordlist
         if (nchar(guess) != 5) {
             guess <- readline(noquote(paste('You must enter a 5 character word: ', '(guess ', guess_count, ' / ', max_guess, '): ', sep = "")))
