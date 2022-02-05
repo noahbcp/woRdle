@@ -3,9 +3,6 @@
 crayon <- require(crayon)
 if (crayon == FALSE) {install.packages('crayon')}
 library(crayon)
-stringr <- require(stringr)
-if (stringr == FALSE) {install.packages('stringr')}
-library(stringr)
 ## Clean environment; check for arguments. Use 'unlimit' for unlimited guesses.
 rm(list=ls())
 args <- commandArgs()
@@ -56,8 +53,4 @@ while (guess_count <= max_guess) {
         } else (cat(bgGreen(rawToChar(guess_raw[i]))))
     }
 }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 34d871d9f142e41cda2bca5fa75c0fc6ad745539
