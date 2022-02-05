@@ -56,8 +56,4 @@ while (guess_count <= max_guess) {
         } else (cat(bgGreen(rawToChar(guess_raw[i]))))
     }
 }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 34d871d9f142e41cda2bca5fa75c0fc6ad745539
