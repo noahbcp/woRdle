@@ -14,22 +14,28 @@ actual <- sample(wordlist$wordlist, 1)
 ## Limit guess count
 max_guess <- if ('unlimit' %in% args) {99999} else {6}
 guess_count <- 1
-while (guess_count == 1 & guess_count <= max_guess & guess_count + 1 ) {
+while (guess_count <= max_guess) {
     guess <- readline(noquote(paste('Enter a 5 character word ','(guess ', guess_count, ' / ', max_guess, '): ', sep = "")))
     guess <- tolower(guess)
-    is_acceptable <- guess %in% acceptable$wordlist
-    ##Check that guesses are valid
-    if (nchar(guess) != 5) {
-        guess <- readline(noquote(paste('You must enter a 5 character word ', '(guess ', guess_count, ' / ', max_guess, '): ', sep = "")))
-    }
-    ## Reject guesses that are not real words
+    guess_count <- guess_count + 1
     is_acceptable <- guess %in% acceptable$wordlist
     if (is_acceptable != TRUE) {
-        guess <- readline(noquote(paste('That word is not in the dictionary. Please guess again ', '(guess ', guess_count, ' / ', max_guess, '): ', sep = "")))
+        guess_count <- guess_count - 1
+        guess <- readline(noquote(paste('That word is not acceptable ', '(guess ', guess_count, ' / ', max_guess, '): ', sep = "")))
+        guess <- tolower(guess)
         is_acceptable <- guess %in% acceptable$wordlist
-        if (nchar(guess) != 5) {
-            guess <- readline(noquote(paste('You must enter a 5 character word: ', '(guess ', guess_count, ' / ', max_guess, '): ', sep = "")))
-        }
+        guess_count + 1
     }
-}
+    if (actual == guess) {
+        readline('You guessed right!')
+        cat(bgGreen(guess))
+        opt <- options(show.error.messages = FALSE)
+        on.exit(options(opt))
+        stop()
+    }
+    remaining = ''
+    while (i = 0) {
+        if (i < length(actual)) {i + 1}
+    }
+    }
 }
