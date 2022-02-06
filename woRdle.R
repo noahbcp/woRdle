@@ -5,7 +5,7 @@ crayon <- require(crayon)
 if (crayon == FALSE) {install.packages('crayon')}
 library(crayon)
 ## Clean environment; check for arguments. Use 'unlimit' for unlimited guesses.
-## Continue used to facilitate play again feature
+## Sets up scoring system
 rm(list = ls())
 args <- commandArgs()
 ## Load English 5 letter words; selects goal word from 300 most common.
@@ -49,6 +49,9 @@ while (guess_count <= max_guess) {
         } else (cat(bold(bgGreen(' ', rawToChar(guess_raw[i]), ' '), ' ')))
     }
     if (guess == actual) {readline("That's correct, Nice work!")
+        write.table(guess_count, file = 'scores.csv', append = TRUE, row.names = FALSE, col.names = FALSE)
+        score_history <- read.csv('scores.csv')
+        hist(score_history$score, freq = TRUE, main = 'Scores', xlab = 'Score', ylab = 'Count')
         opt <- options(show.error.messages = FALSE)
         on.exit(options(opt))
         stop()
