@@ -6,7 +6,7 @@
 
 
 
-Clone the directory and run woRdle.R
+Clone the repo and run woRdle.R
 
 
 Lots of inspiration taken from [huytd/wordle](https://gist.github.com/huytd/6a1a6a7b34a0d0abcac00b47e3d01513)
