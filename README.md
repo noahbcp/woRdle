@@ -1,7 +1,7 @@
 # woRdle
 ### Wordle in <60 lines of R!
 
-![wordle splash](https://user-images.githubusercontent.com/98575657/152641006-214da6cf-cdeb-4fb3-b0a8-9bd62f5091e5.png)
+![wordle splash](https://user-images.githubusercontent.com/98575657/152663069-e367fc06-3276-4e73-bf70-d99182914938.png)
 
 
 
