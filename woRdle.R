@@ -49,9 +49,13 @@ while (guess_count <= max_guess) {
         } else (cat(bold(bgGreen(' ', rawToChar(guess_raw[i]), ' '), ' ')))
     }
     if (guess == actual) {readline("That's correct, Nice work!")
+        ## Adjust guess_count to true number (caused by count starting at 1)
+        guess_count <- guess_count - 1
+        ## Add score to scores.csv; print out a histogram of scores
         write.table(guess_count, file = 'scores.csv', append = TRUE, row.names = FALSE, col.names = FALSE)
         score_history <- read.csv('scores.csv')
         hist(score_history$score, freq = TRUE, main = 'Scores', xlab = 'Score', ylab = 'Count')
+        ## Silently exit program
         opt <- options(show.error.messages = FALSE)
         on.exit(options(opt))
         stop()
