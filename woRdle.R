@@ -37,9 +37,9 @@ while (guess_count <= max_guess) {
     while ((i < length(actual_raw)) && (is_acceptable == TRUE)) {
         i <- (i + 1)
         ## Checks whether the letter is in the correct position (i) then
-        ## whether the letter is in the word at all. Prints yellow
-        ## if letter is in word but wrong position otherwise prints red
-        ## if neither statement satisfied prints green as letter must be in
+        ## if the letter is in the word at all. Prints yellow
+        ## if letter is in word but wrong position otherwise prints red.
+        ## If neither statement satisfied prints green as letter must be in
         ## correct position
         if (actual_raw[i] != guess_raw[i]) {
             if (guess_raw[i] %in% remaining) {
