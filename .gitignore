@@ -1,5 +1,7 @@
+# Ignore R junk
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+# Ignore scores
 scores.csv
