@@ -53,7 +53,7 @@ while (guess_count <= max_guess) {
         guess_count <- guess_count - 1
         ## Add score to scores.csv; print out a histogram of scores
         write.table(guess_count, file = 'scores.csv', append = TRUE, row.names = FALSE, col.names = FALSE)
-        score_history <- read.csv('scores.csv')
+        score_history <- read.csv('scores.csv', fileEncoding = "UTF-8-BOM")
         hist(score_history$score, freq = TRUE, main = 'Scores', xlab = 'Score', ylab = 'Count')
         ## Silently exit program
         opt <- options(show.error.messages = FALSE)
